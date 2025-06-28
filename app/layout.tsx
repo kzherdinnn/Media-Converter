@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 import { Toaster } from "@/components/ui/toaster";
 import GA from "@/components/GA";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Providers } from "@/components/providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,19 +18,24 @@ tingkatkan konten Anda seperti yang belum pernah ada sebelumnya!`,
     keywords: "konverter gambar, konverter video, konverter audio, konverter gambar tak terbatas, konverter video tak terbatas",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
     return (
         <html lang="en">
-            <GA GA_MEASUREMENT_ID="G-52GQ441X7H" />
-            <meta name="google-site-verification" content="V8lmEvFOdYBlChgR6pYABBZBhI1EFnPb1YuxTTdHXMU" />
+            <head>
+                <GA GA_MEASUREMENT_ID="G-52GQ441X7H" />
+                <meta
+                    name="google-site-verification"
+                    content="V8lmEvFOdYBlChgR6pYABBZBhI1EFnPb1YuxTTdHXMU"
+                />
+            </head>
             <body className={inter.className}>
-                <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={["light", "dark"]}>
-                    <Navbar />
-                    <Toaster />
-                    <div className="pt-32 min-h-screen lg:pt-36 2xl:pt-44 container max-w-4xl lg:max-w-6xl 2xl:max-w-7xl">
-                        {children}
-                    </div>
-                </ThemeProvider>
+                <Providers>
+                    <div className="pt-32 min-h-screen">{children}</div>
+                </Providers>
             </body>
         </html>
     );

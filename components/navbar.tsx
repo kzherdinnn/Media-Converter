@@ -27,6 +27,11 @@ export default function Navbar({ }): any {
                         Privacy Policy
                     </Button>
                 </Link>
+                <Link href="/steganografi">
+                    <Button variant="ghost" className="font-semibold text-md">
+                        Steganografi
+                    </Button>
+                </Link>
             </div>
             <div className="items-center hidden gap-2 md:flex">
                 <ModeToggle />
@@ -60,6 +65,11 @@ export default function Navbar({ }): any {
                                     <Link href="/privacy-policy">
                                         <Button variant="link" className="w-full font-semibold text-md">
                                             Privacy Policy
+                                        </Button>
+                                    </Link>
+                                    <Link href="/steganografi">
+                                        <Button variant="link" className="w-full font-semibold text-md">
+                                            Steganografi
                                         </Button>
                                     </Link>
                                 </SheetTrigger>
